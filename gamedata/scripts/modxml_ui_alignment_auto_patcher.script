@@ -1,0 +1,172 @@
+local force_patch_all_ui_files = true
+
+local ui_file_patterns = {"actor_menu", "message_box", "pda", "talk", "ui_inventory", "ui_keybinding", "ui_mcm",
+						  "ui_mm_main", "ui_mm_faction_select", "ui_mm_load_dlg", "ui_mm_save_dlg", "ui_options",
+						  "ui_workshop", "ui_mcm", "ui_options"}
+
+local force_patch_all_text_elements = false
+
+local ui_text_parent_element_patterns = {"button", "btn", "cap", "text", "list", "block", "caption", "rank", "name",
+										 "community", "money", "weight", "price"}
+
+local ui_custom_vertical_text_offset = {
+	ui_options_16 = {
+		btn_accept = "-1",
+		btn_reset = "-1",
+		btn_default = "-1",
+		btn_cancel = "-1"
+	},
+	ui_mcm_16 = {
+		btn_accept = "-1",
+		btn_reset = "-1",
+		btn_default = "-1",
+		btn_cancel = "-1",
+	},
+	ui_mm_faction_select_16 = {
+		btn_faction = "-1",
+		btn_icon = "-1",
+		btn_start = "-1",
+		btn_random = "-1",
+		btn_back = "-1"
+	},
+}
+
+local ui_custom_value = {
+	ui_mm_main_16 = {
+		["shniaga_wnd > shniaga > magnifire > y_offset"] = "-8"
+	},
+	ui_mcm_16 = {
+		["elements > btn_list"] = {width = "103"}
+	},
+	ui_mm_faction_select_16 = {
+		["check_reset > texture"] = "ui_inGame2_checkbox"
+	},
+}
+
+function on_xml_read()
+	RegisterScriptCallback("on_xml_read", function(xml_scope_name, xml_obj)
+		-- Prevalidation
+
+		-- Return if `xml_scope_name` does not start with "ui\"
+		if not string.find(xml_scope_name, "ui\\") then
+			return
+		end
+
+		if string.find(xml_scope_name, "textures_descr") then
+			return
+		end
+		
+		
+		if not xml_obj or not xml_obj.xml_table or not xml_obj.xml_table.kids or not xml_obj.xml_table.kids[1] then
+			printf("DXML UI auto-patcher could not read XML file '%s', skipping.", file_name)
+			return
+		end
+
+		-- Processing
+
+		local file_name = file_name_from_scope_name(xml_scope_name)
+
+		if force_patch_all_ui_files then 
+			patch_xml_file(file_name, xml_obj)
+		else
+			for _, pattern in ipairs(ui_file_patterns) do
+				if string.find(file_name, pattern) then
+					patch_xml_file(file_name, xml_obj)
+				end
+			end
+		end
+	end)
+end
+
+function patch_xml_file(file_name, xml_obj)
+	printf("DXML running UI auto-patcher for XML file '%s'.", file_name)
+
+	-- Select all `text` elements in tree.
+	local text_element_objects = xml_obj:query("text")
+	local custom_file_vertical_offsets = ui_custom_vertical_text_offset[file_name] or {}
+
+	-- Go through all `text` elements and check if parent tag matches any parent element patterns.
+	for _, text_element_object in ipairs(text_element_objects) do
+		local parent_element_object = text_element_object.parent
+		local parent_tag = tag_from_element(parent_element_object.el)
+		local text_tag = tag_from_element(text_element_object.el)
+
+		if not parent_element_object then
+			-- printf("DXML found text element '%s' with no parent, will be skipped.", parent_tag)
+			goto continue
+		end
+
+		for _, pattern in ipairs(ui_text_parent_element_patterns) do
+			-- Check if parent tag matches pattern for patching.
+			if force_patch_all_text_elements or string.find(parent_tag, pattern) then
+				printf("DXML UI auto-patcher modifying text element '%s' with parent '%s'.", text_tag, parent_tag)
+				patch_text_element(xml_obj, text_element_object)
+			end
+		end
+
+		-- Check for custom vertical text offset and apply if found.
+		-- printf("DXML UI auto-patcher checking for custom vertical offset for text element '%s' with parent '%s' in file '%s'.", text_tag, parent_tag, file_name)
+
+		if custom_file_vertical_offsets[parent_tag] then
+			local custom_vertical_offset = custom_file_vertical_offsets[parent_tag]
+			
+			printf("DXML UI auto-patcher setting custom vertical offset '%s' to text element '%s' with parent '%s'.", custom_vertical_offset, text_tag, parent_tag)
+			xml_obj:setElementAttr(text_element_object, {
+				y = custom_vertical_offset
+			})
+		end
+
+		::continue::
+	end
+
+	patch_custom_values(file_name, xml_obj)
+end
+
+function patch_custom_values(file_name, xml_obj)
+	local custom_values = ui_custom_value[file_name] or {}
+
+	for query, value in pairs(custom_values) do
+		local element_object = xml_obj:query(query)[1]
+
+		if element_object then
+			local element_tag = tag_from_element(element_object.el)
+			
+			if type(value) == "table" then
+				printf("DXML UI auto-patcher applying custom values in '%s', set to '%s'.", element_tag, value)
+				xml_obj:setElementAttr(element_object, value)
+			else
+				printf("DXML UI auto-patcher applying custom value in '%s', set to '%s'.", element_tag, value)
+				xml_obj:setText(element_object, value)
+			end
+		end
+	end
+end
+
+function patch_text_element(xml_obj, text_element_object)
+	xml_obj:setElementAttr(text_element_object, {
+		complex_mode = "1",
+		vert_align = "c"
+	})
+end
+
+function tag_from_element(element)
+	-- Return sanitized tag name from element identifier.
+	-- Example input: `<btn_cancel complex_mode="1"`, output "btn_cancel"
+
+	local output = element
+
+	-- Step #1, remove initial character.
+	output = output:sub(2)
+
+	-- Step #2, match tag name.
+	output = string.match(output, "([%w_]+)")
+
+	return output
+
+end
+
+function file_name_from_scope_name(scope_name)
+	-- Return sanitized module name without file extension from raw file name.
+	-- Example input: "ui\ui_mm_main.xml", output: "ui_mm_main"
+	return string.gsub(scope_name, "ui\\", ""):gsub(".xml", "")
+end
