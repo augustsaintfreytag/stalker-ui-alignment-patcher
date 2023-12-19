@@ -1,47 +1,12 @@
-local force_patch_all_ui_files = true
+local config = saint_ui_alignment_auto_patcher_config
+local force_patch_all_ui_files = config.force_patch_all_ui_files
+local ui_file_patterns = config.ui_file_patterns
+local force_patch_all_text_elements = config.force_patch_all_text_elements
+local ui_text_parent_element_patterns = config.ui_text_parent_element_patterns
+local ui_custom_vertical_text_offset = config.ui_custom_vertical_text_offset
+local ui_custom_value = config.ui_custom_value
 
-local ui_file_patterns = {"actor_menu", "message_box", "pda", "talk", "ui_inventory", "ui_keybinding", "ui_mcm",
-						  "ui_mm_main", "ui_mm_faction_select", "ui_mm_load_dlg", "ui_mm_save_dlg", "ui_options",
-						  "ui_workshop", "ui_mcm", "ui_options"}
-
-local force_patch_all_text_elements = false
-
-local ui_text_parent_element_patterns = {"button", "btn", "cap", "text", "list", "block", "caption", "rank", "name",
-										 "community", "money", "weight", "price"}
-
-local ui_custom_vertical_text_offset = {
-	ui_options_16 = {
-		btn_accept = "-1",
-		btn_reset = "-1",
-		btn_default = "-1",
-		btn_cancel = "-1"
-	},
-	ui_mcm_16 = {
-		btn_accept = "-1",
-		btn_reset = "-1",
-		btn_default = "-1",
-		btn_cancel = "-1",
-	},
-	ui_mm_faction_select_16 = {
-		btn_faction = "-1",
-		btn_icon = "-1",
-		btn_start = "-1",
-		btn_random = "-1",
-		btn_back = "-1"
-	},
-}
-
-local ui_custom_value = {
-	ui_mm_main_16 = {
-		["shniaga_wnd > shniaga > magnifire > y_offset"] = "-8"
-	},
-	ui_mcm_16 = {
-		["elements > btn_list"] = {width = "103"}
-	},
-	ui_mm_faction_select_16 = {
-		["check_reset > texture"] = "ui_inGame2_checkbox"
-	},
-}
+-- Entry Point
 
 function on_xml_read()
 	RegisterScriptCallback("on_xml_read", function(xml_scope_name, xml_obj)
@@ -55,8 +20,7 @@ function on_xml_read()
 		if string.find(xml_scope_name, "textures_descr") then
 			return
 		end
-		
-		
+
 		if not xml_obj or not xml_obj.xml_table or not xml_obj.xml_table.kids or not xml_obj.xml_table.kids[1] then
 			printf("DXML UI auto-patcher could not read XML file '%s', skipping.", file_name)
 			return
@@ -66,7 +30,7 @@ function on_xml_read()
 
 		local file_name = file_name_from_scope_name(xml_scope_name)
 
-		if force_patch_all_ui_files then 
+		if force_patch_all_ui_files then
 			patch_xml_file(file_name, xml_obj)
 		else
 			for _, pattern in ipairs(ui_file_patterns) do
@@ -77,6 +41,8 @@ function on_xml_read()
 		end
 	end)
 end
+
+-- File-Level Patch
 
 function patch_xml_file(file_name, xml_obj)
 	printf("DXML running UI auto-patcher for XML file '%s'.", file_name)
@@ -109,8 +75,9 @@ function patch_xml_file(file_name, xml_obj)
 
 		if custom_file_vertical_offsets[parent_tag] then
 			local custom_vertical_offset = custom_file_vertical_offsets[parent_tag]
-			
-			printf("DXML UI auto-patcher setting custom vertical offset '%s' to text element '%s' with parent '%s'.", custom_vertical_offset, text_tag, parent_tag)
+
+			printf("DXML UI auto-patcher setting custom vertical offset '%s' to text element '%s' with parent '%s'.",
+				custom_vertical_offset, text_tag, parent_tag)
 			xml_obj:setElementAttr(text_element_object, {
 				y = custom_vertical_offset
 			})
@@ -122,6 +89,8 @@ function patch_xml_file(file_name, xml_obj)
 	patch_custom_values(file_name, xml_obj)
 end
 
+-- Custom Value Patch
+
 function patch_custom_values(file_name, xml_obj)
 	local custom_values = ui_custom_value[file_name] or {}
 
@@ -130,7 +99,7 @@ function patch_custom_values(file_name, xml_obj)
 
 		if element_object then
 			local element_tag = tag_from_element(element_object.el)
-			
+
 			if type(value) == "table" then
 				printf("DXML UI auto-patcher applying custom values in '%s', set to '%s'.", element_tag, value)
 				xml_obj:setElementAttr(element_object, value)
@@ -142,12 +111,16 @@ function patch_custom_values(file_name, xml_obj)
 	end
 end
 
+-- Text Element Alignment Patch
+
 function patch_text_element(xml_obj, text_element_object)
 	xml_obj:setElementAttr(text_element_object, {
 		complex_mode = "1",
 		vert_align = "c"
 	})
 end
+
+-- Utility
 
 function tag_from_element(element)
 	-- Return sanitized tag name from element identifier.
