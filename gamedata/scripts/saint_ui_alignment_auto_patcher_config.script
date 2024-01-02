@@ -61,5 +61,29 @@ ui_custom_value = {
 	},
 	ui_mm_faction_select_16 = {
 		["check_reset > texture"] = "ui_inGame2_checkbox"
+	},
+	utils_16 = {
+		["stats_box > cap"] = {
+			height = "18",
+			y = "0"
+		},
+		["stats_box > diff"] = {
+			height = "18",
+			y = "0"
+		},
+		["stats_box > prog_txt"] = {
+			height = "18",
+			y = "0"
+		},
+		["stats_box > compare"] = {
+			height = "18",
+			y = "0"
+		},
+		["stats_box > icon"] = {
+			height = "14",
+			width = "10",
+			y = "2",
+			x = "2"
+		}
 	}
 }
