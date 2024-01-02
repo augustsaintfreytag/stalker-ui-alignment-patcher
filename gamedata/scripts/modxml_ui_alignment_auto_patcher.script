@@ -3,7 +3,6 @@ local force_patch_all_ui_files = config.force_patch_all_ui_files
 local ui_file_patterns = config.ui_file_patterns
 local force_patch_all_text_elements = config.force_patch_all_text_elements
 local ui_text_parent_element_patterns = config.ui_text_parent_element_patterns
-local ui_custom_vertical_text_offset = config.ui_custom_vertical_text_offset
 local ui_custom_value = config.ui_custom_value
 
 -- Logging
