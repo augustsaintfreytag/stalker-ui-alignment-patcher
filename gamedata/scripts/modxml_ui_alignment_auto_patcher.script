@@ -70,19 +70,6 @@ function patch_xml_file(file_name, xml_obj)
 			end
 		end
 
-		-- Check for custom vertical text offset and apply if found.
-		-- printf("DXML UI auto-patcher checking for custom vertical offset for text element '%s' with parent '%s' in file '%s'.", text_tag, parent_tag, file_name)
-
-		if custom_file_vertical_offsets[parent_tag] then
-			local custom_vertical_offset = custom_file_vertical_offsets[parent_tag]
-
-			printf("DXML UI auto-patcher setting custom vertical offset '%s' to text element '%s' with parent '%s'.",
-				custom_vertical_offset, text_tag, parent_tag)
-			xml_obj:setElementAttr(text_element_object, {
-				y = custom_vertical_offset
-			})
-		end
-
 		::continue::
 	end
 
