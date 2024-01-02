@@ -22,44 +22,34 @@ ui_text_parent_element_patterns = {"text", "txt", "button", "btn", "diff", "comp
 										 "caption", "info", "rank", "name", "community", "money", "weight", "price",
 										 "cost"}
 
--- Custom vertical text offsets for specific UI files and elements.
--- Patcher will set the text element's `y` attribute to the value specified here.
--- Changes will only be made if an applicable `text` child is found, the parent will not be moved.
-ui_custom_vertical_text_offset = {
-	ui_options_16 = {
-		btn_accept = "-1",
-		btn_reset = "-1",
-		btn_default = "-1",
-		btn_cancel = "-1"
-	},
-	ui_mcm_16 = {
-		btn_accept = "-1",
-		btn_reset = "-1",
-		btn_default = "-1",
-		btn_cancel = "-1"
-	},
-	ui_mm_faction_select_16 = {
-		btn_faction = "-1",
-		btn_icon = "-1",
-		btn_start = "-1",
-		btn_random = "-1",
-		btn_back = "-1"
-	}
-}
-
 -- Custom value overrides for specific UI files and elements.
 -- Allows specifying a qualified selector to be resolved in a given UI file and a value to be set.
--- For example, can be used to fix misalignment of the magnification highlight effect in the main menu.
+-- Supplying a dictionary will assign given values as attributes to the selected element.
 ui_custom_value = {
 	ui_mm_main_16 = {
 		["shniaga_wnd > shniaga > magnifire > y_offset"] = "-8"
 	},
+	ui_options_16 = {
+		["btn_accept"] = { y = "-1" },
+		["btn_reset"] = { y = "-1" },
+		["btn_default"] = { y = "-1" },
+		["btn_cancel"] = { y = "-1" }
+	},
 	ui_mcm_16 = {
+		["btn_accept"] = { y = "-1" },
+		["btn_reset"] = { y = "-1" },
+		["btn_default"] = { y = "-1" },
+		["btn_cancel"] = { y = "-1" },
 		["elements > btn_list"] = {
 			width = "103"
 		}
 	},
 	ui_mm_faction_select_16 = {
+		["btn_faction"] = { y = "-1" },
+		["btn_icon"] = { y = "-1" },
+		["btn_start"] = { y = "-1" },
+		["btn_random"] = { y = "-1" },
+		["btn_back"] = { y = "-1" },
 		["check_reset > texture"] = "ui_inGame2_checkbox"
 	},
 	utils_16 = {
