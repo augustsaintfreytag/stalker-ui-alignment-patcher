@@ -30,7 +30,7 @@ function on_xml_read()
 		end
 
 		if not xml_obj or not xml_obj.xml_table or not xml_obj.xml_table.kids or not xml_obj.xml_table.kids[1] then
-			log("DXML UI auto-patcher could not read XML file '%s', skipping.", xml_scope_name)
+			log("DXML UI patcher could not read XML file '%s', skipping.", xml_scope_name)
 			return
 		end
 
@@ -51,7 +51,7 @@ end
 -- File-Level Patch
 
 function patch_xml_file(file_name, xml_obj)
-	printf("DXML running UI auto-patcher for XML file '%s'.", file_name)
+	log("DXML running UI auto-patcher for XML file '%s'.", file_name)
 
 	-- Select all `text` elements in tree.
 	local text_element_objects = xml_obj:query("text")
@@ -70,7 +70,7 @@ function patch_xml_file(file_name, xml_obj)
 		for _, pattern in ipairs(ui_text_parent_element_patterns) do
 			-- Check if parent tag matches pattern for patching.
 			if force_patch_all_text_elements or string.find(parent_tag, pattern) then
-				log("DXML UI auto-patcher modifying text element '%s' with parent '%s'.", text_tag, parent_tag)
+				log("DXML UI patcher modifying text element '%s' with parent '%s'.", text_tag, parent_tag)
 				patch_text_element(xml_obj, text_element_object)
 			end
 		end
@@ -93,10 +93,10 @@ function patch_custom_values(file_name, xml_obj)
 			local element_tag = tag_from_element(element_object.el)
 
 			if type(value) == "table" then
-				log("DXML UI auto-patcher applying custom values in '%s', set to '%s'.", element_tag, value)
+				log("DXML UI patcher applying custom values in '%s', set to '%s'.", element_tag, value)
 				xml_obj:setElementAttr(element_object, value)
 			else
-				log("DXML UI auto-patcher applying custom value in '%s', set to '%s'.", element_tag, value)
+				log("DXML UI patcher applying custom value in '%s', set to '%s'.", element_tag, value)
 				xml_obj:setText(element_object, value)
 			end
 		end
