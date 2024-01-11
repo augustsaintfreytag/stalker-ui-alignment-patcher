@@ -5,9 +5,9 @@ force_patch_all_ui_files = true
 
 -- Patterns for loaded XML files to be checked against. Files only need to contain a partial match for patching to be performed.
 -- For example, pattern `ui_options` will match `ui_options.xml` but also `ui_options_16.xml`.
-ui_file_patterns = {"actor_menu", "message_box", "pda", "talk", "ui_inventory", "ui_keybinding", "ui_mcm",
-						  "ui_mm_main", "ui_mm_faction_select", "ui_mm_load_dlg", "ui_mm_save_dlg", "ui_options",
-						  "ui_workshop", "ui_mcm", "ui_options"}
+ui_file_patterns = { "actor_menu", "message_box", "pda", "talk", "ui_inventory", "ui_keybinding", "ui_mcm",
+	"ui_mm_main", "ui_mm_faction_select", "ui_mm_load_dlg", "ui_mm_save_dlg", "ui_options",
+	"ui_workshop", "ui_mcm", "ui_options" }
 
 -- Ignore `ui_text_parent_element_patterns` and patch all `text` elements found in any context.
 -- Not recommended -- not all text elements are in a proper container element.
@@ -18,24 +18,24 @@ force_patch_all_text_elements = false
 -- Patterns for parent elements of `text` elements to be patched.
 -- Element names only need to contain a partial match for patching to be performed.
 -- For example, pattern `button` will match `button`, but also `button_confirm`, `button_cancel`, and others.
-ui_text_parent_element_patterns = {"text", "txt", "button", "btn", "diff", "compare", "cap", "list", "block",
-										 "caption", "info", "rank", "name", "community", "money", "weight", "price",
-										 "cost"}
+ui_text_parent_element_patterns = { "text", "txt", "button", "btn", "diff", "compare", "cap", "list", "block",
+	"caption", "info", "rank", "name", "community", "money", "weight", "price",
+	"cost" }
 
 -- Custom value overrides for specific UI files and elements.
 -- Allows specifying a qualified selector to be resolved in a given UI file and a value to be set.
 -- Supplying a dictionary will assign given values as attributes to the selected element.
 ui_custom_value = {
-	ui_mm_main_16 = {
+	["ui_mm_main_16"] = {
 		["shniaga_wnd > shniaga > magnifire > y_offset"] = "-8"
 	},
-	ui_options_16 = {
+	["ui_options_16"] = {
 		["btn_accept"] = { y = "-1" },
 		["btn_reset"] = { y = "-1" },
 		["btn_default"] = { y = "-1" },
 		["btn_cancel"] = { y = "-1" }
 	},
-	ui_mcm_16 = {
+	["ui_mcm_16"] = {
 		["btn_accept"] = { y = "-1" },
 		["btn_reset"] = { y = "-1" },
 		["btn_default"] = { y = "-1" },
@@ -44,7 +44,7 @@ ui_custom_value = {
 			width = "103"
 		}
 	},
-	ui_mm_faction_select_16 = {
+	["ui_mm_faction_select_16"] = {
 		["btn_faction"] = { y = "-1" },
 		["btn_icon"] = { y = "-1" },
 		["btn_start"] = { y = "-1" },
@@ -52,14 +52,35 @@ ui_custom_value = {
 		["btn_back"] = { y = "-1" },
 		["check_reset > texture"] = "ui_inGame2_checkbox"
 	},
-	utils_16 = {
+	["utils_16"] = {
+		["item_info > weight"] = {
+			y = "20",
+			x = "325"
+		},
+		["item_info > cost"] = {
+			y = "-1000"
+		},
+		["item_info > no_trade"] = {
+			y = "-1000",
+			width = "0",
+			height = "0"
+		},
+		["item_info > description"] = {
+			y = "40"
+		},
+		["item_info > description > text"] = {
+			complex_mode = "1",
+			vert_align = "t"
+		},
 		["stats_box > cap"] = {
 			height = "18",
-			y = "0"
+			y = "0",
+			x = "15"
 		},
 		["stats_box > diff"] = {
 			height = "18",
-			y = "0"
+			y = "0",
+			x = "180"
 		},
 		["stats_box > prog_txt"] = {
 			height = "18",
@@ -74,6 +95,25 @@ ui_custom_value = {
 			width = "10",
 			y = "2",
 			x = "2"
+		},
+		["ammo_type > cap_ammo_types > text"] = {
+			complex_mode = "0",
+			vert_align = "t",
+		},
+		["ammo_type > cap_ammo_used_type > text"] = {
+			complex_mode = "0",
+			vert_align = "t",
+		}
+	},
+	["actor_menu_16"] = {
+		["wpn_params > cap_ammo_used_type"] = {
+			x = "180"
+		}
+	},
+	["ui_inventory_16"] = {
+		["player > money"] = {
+			y = "120",
+			height = "25"
 		}
 	}
 }

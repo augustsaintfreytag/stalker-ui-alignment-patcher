@@ -1,4 +1,4 @@
-local config = saint_ui_alignment_auto_patcher_config
+local config = config_ui_alignment_patcher
 local force_patch_all_ui_files = config.force_patch_all_ui_files
 local ui_file_patterns = config.ui_file_patterns
 local force_patch_all_text_elements = config.force_patch_all_text_elements
@@ -8,12 +8,14 @@ local ui_custom_value = config.ui_custom_value
 -- Logging
 
 local function log(...)
-	printf(args)
+	printf(...)
 end
 
 -- Entry Point
 
 function on_xml_read()
+	log("Loading Saint's DXML UI alignment patcher.")
+
 	RegisterScriptCallback("on_xml_read", function(xml_scope_name, xml_obj)
 		-- Prevalidation
 
@@ -70,7 +72,7 @@ function patch_xml_file(file_name, xml_obj)
 		for _, pattern in ipairs(ui_text_parent_element_patterns) do
 			-- Check if parent tag matches pattern for patching.
 			if force_patch_all_text_elements or string.find(parent_tag, pattern) then
-				log("DXML UI patcher modifying text element '%s' with parent '%s'.", text_tag, parent_tag)
+				-- log("DXML UI patcher modifying text element '%s' with parent '%s'.", text_tag, parent_tag)
 				patch_text_element(xml_obj, text_element_object)
 			end
 		end
@@ -89,17 +91,23 @@ function patch_custom_values(file_name, xml_obj)
 	for query, value in pairs(custom_values) do
 		local element_object = xml_obj:query(query)[1]
 
-		if element_object then
-			local element_tag = tag_from_element(element_object.el)
-
-			if type(value) == "table" then
-				log("DXML UI patcher applying custom values in '%s', set to '%s'.", element_tag, value)
-				xml_obj:setElementAttr(element_object, value)
-			else
-				log("DXML UI patcher applying custom value in '%s', set to '%s'.", element_tag, value)
-				xml_obj:setText(element_object, value)
-			end
+		if not element_object then
+			log("DXML UI patcher could not find element for custom override value for file '%s' by query '%s'.",
+				file_name, query)
+			goto continue
 		end
+
+		local element_tag = tag_from_element(element_object.el)
+
+		if type(value) == "table" then
+			log("DXML UI patcher applying custom values in '%s', set to '%s'.", element_tag, value)
+			xml_obj:setElementAttr(element_object, value)
+		else
+			log("DXML UI patcher applying custom value in '%s', set to '%s'.", element_tag, value)
+			xml_obj:setText(element_object, value)
+		end
+
+		::continue::
 	end
 end
 
@@ -127,11 +135,15 @@ function tag_from_element(element)
 	output = string.match(output, "([%w_]+)")
 
 	return output
-
 end
 
+-- Return extracted XML module name without path or file extension from scope name.
+-- Example input: "ui\ui_mm_main.xml", output: "ui_mm_main"
 function file_name_from_scope_name(scope_name)
-	-- Return sanitized module name without file extension from raw file name.
-	-- Example input: "ui\ui_mm_main.xml", output: "ui_mm_main"
-	return string.gsub(scope_name, "ui\\", ""):gsub(".xml", "")
+	local index_of_last_path_separator = string.find(scope_name, "\\[^\\]*$")
+	local file_name_with_extension = string.sub(scope_name, index_of_last_path_separator + 1)
+	local index_of_extension_separator = string.find(file_name_with_extension, "%.[^%.]*$")
+	local file_name = string.sub(file_name_with_extension, 1, index_of_extension_separator - 1)
+
+	return file_name
 end
