@@ -53,7 +53,7 @@ end
 -- File-Level Patch
 
 function patch_xml_file(file_name, xml_obj)
-	log("DXML running UI auto-patcher for XML file '%s'.", file_name)
+	log("DXML UI patcher processing file '%s'.", file_name)
 
 	-- Select all `text` elements in tree.
 	local text_element_objects = xml_obj:query("text")
@@ -65,7 +65,7 @@ function patch_xml_file(file_name, xml_obj)
 		local text_tag = tag_from_element(text_element_object.el)
 
 		if not parent_element_object then
-			-- log("DXML found text element '%s' with no parent, will be skipped.", parent_tag)
+			-- log("DXML UI patcher found text element '%s' with no parent, will be skipped.", parent_tag)
 			goto continue
 		end
 
