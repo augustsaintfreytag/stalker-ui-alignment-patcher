@@ -96,6 +96,13 @@ ui_custom_value = {
 			y = "2",
 			x = "2"
 		},
+		["ammo_type > cap_ammo_types"] = {
+			x = "12",
+			width = "52"
+		},
+		["ammo_type > cap_ammo_used_type"] = {
+			x = "58"
+		},
 		["ammo_type > cap_ammo_types > text"] = {
 			complex_mode = "0",
 			vert_align = "t",
