@@ -1,4 +1,4 @@
-local config = config_ui_alignment_patcher
+local config = modxml_ui_alignment_patcher_config
 local force_patch_all_ui_files = config.force_patch_all_ui_files
 local ui_file_patterns = config.ui_file_patterns
 local force_patch_all_text_elements = config.force_patch_all_text_elements
