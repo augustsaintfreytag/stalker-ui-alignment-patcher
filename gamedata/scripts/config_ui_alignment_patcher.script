@@ -106,10 +106,12 @@ ui_custom_value = {
 		["ammo_type > cap_ammo_types > text"] = {
 			complex_mode = "0",
 			vert_align = "t",
+			color = "ui_gray_3"
 		},
 		["ammo_type > cap_ammo_used_type > text"] = {
 			complex_mode = "0",
 			vert_align = "t",
+			color = "ui_gray_3"
 		}
 	},
 	["actor_menu_16"] = {
