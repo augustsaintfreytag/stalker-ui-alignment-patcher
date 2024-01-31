@@ -1,11 +1,11 @@
 -- Ignore UI file patterns, patch all UI files processed by DXML that are in the game's `ui` gamedata path.
 -- Recommended -- all UI XML files may benefit from patching text elements for correct alignment.
 -- Note that XML files in the `textures_descr` directory will always be skipped.
-force_patch_all_ui_files = true
+FORCE_PATCH_ALL_UI_FILES = true
 
 -- Patterns for loaded XML files to be checked against. Files only need to contain a partial match for patching to be performed.
 -- For example, pattern `ui_options` will match `ui_options.xml` but also `ui_options_16.xml`.
-ui_file_patterns = { "actor_menu", "message_box", "pda", "talk", "ui_inventory", "ui_keybinding", "ui_mcm",
+UI_FILE_PATTERNS = { "actor_menu", "message_box", "pda", "talk", "ui_inventory", "ui_keybinding", "ui_mcm",
 	"ui_mm_main", "ui_mm_faction_select", "ui_mm_load_dlg", "ui_mm_save_dlg", "ui_options",
 	"ui_workshop", "ui_mcm", "ui_options" }
 
@@ -13,19 +13,19 @@ ui_file_patterns = { "actor_menu", "message_box", "pda", "talk", "ui_inventory",
 -- Not recommended -- not all text elements are in a proper container element.
 -- May cause unwanted layout changes, e.g. vertically stacked text in the main menu.
 -- Instead, find element to be patched in UI XML files and add its parent tag to `ui_text_parent_element_patterns` set.
-force_patch_all_text_elements = false
+FORCE_PATCH_ALL_TEXT_ELEMENTS = false
 
 -- Patterns for parent elements of `text` elements to be patched.
 -- Element names only need to contain a partial match for patching to be performed.
 -- For example, pattern `button` will match `button`, but also `button_confirm`, `button_cancel`, and others.
-ui_text_parent_element_patterns = { "text", "txt", "button", "btn", "diff", "compare", "cap", "list", "block",
+UI_TEXT_PARENT_ELEMENT_PATTERNS = { "text", "txt", "button", "btn", "diff", "compare", "cap", "list", "block",
 	"caption", "info", "rank", "name", "community", "money", "weight", "price",
 	"cost" }
 
 -- Custom value overrides for specific UI files and elements.
 -- Allows specifying a qualified selector to be resolved in a given UI file and a value to be set.
 -- Supplying a dictionary will assign given values as attributes to the selected element.
-ui_custom_value = {
+UI_CUSTOM_VALUE = {
 	["ui_mm_main_16"] = {
 		["shniaga_wnd > shniaga > magnifire > y_offset"] = "-8"
 	},

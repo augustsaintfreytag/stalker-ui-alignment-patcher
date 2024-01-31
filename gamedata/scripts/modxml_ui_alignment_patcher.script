@@ -1,15 +1,12 @@
-local config = modxml_ui_alignment_patcher_config
-local force_patch_all_ui_files = config.force_patch_all_ui_files
-local ui_file_patterns = config.ui_file_patterns
-local force_patch_all_text_elements = config.force_patch_all_text_elements
-local ui_text_parent_element_patterns = config.ui_text_parent_element_patterns
-local ui_custom_value = config.ui_custom_value
-
 -- Logging
 
 local function log(...)
 	printf(...)
 end
+
+-- Config
+
+local CONFIG = modxml_ui_alignment_patcher_config
 
 -- Entry Point
 
@@ -38,10 +35,10 @@ function on_xml_read()
 
 		-- Processing
 
-		if force_patch_all_ui_files then
+		if CONFIG.FORCE_PATCH_ALL_UI_FILES then
 			patch_xml_file(file_name, xml_obj)
 		else
-			for _, pattern in ipairs(ui_file_patterns) do
+			for _, pattern in ipairs(CONFIG.UI_FILE_PATTERNS) do
 				if string.find(file_name, pattern) then
 					patch_xml_file(file_name, xml_obj)
 				end
@@ -69,9 +66,9 @@ function patch_xml_file(file_name, xml_obj)
 			goto continue
 		end
 
-		for _, pattern in ipairs(ui_text_parent_element_patterns) do
+		for _, pattern in ipairs(CONFIG.UI_TEXT_PARENT_ELEMENT_PATTERNS) do
 			-- Check if parent tag matches pattern for patching.
-			if force_patch_all_text_elements or string.find(parent_tag, pattern) then
+			if CONFIG.FORCE_PATCH_ALL_TEXT_ELEMENTS or string.find(parent_tag, pattern) then
 				-- log("DXML UI patcher modifying text element '%s' with parent '%s'.", text_tag, parent_tag)
 				patch_text_element(xml_obj, text_element_object)
 			end
@@ -86,7 +83,7 @@ end
 -- Custom Value Patch
 
 function patch_custom_values(file_name, xml_obj)
-	local custom_values = ui_custom_value[file_name] or {}
+	local custom_values = CONFIG.UI_CUSTOM_VALUE[file_name] or {}
 
 	for query, value in pairs(custom_values) do
 		local element_object = xml_obj:query(query)[1]
