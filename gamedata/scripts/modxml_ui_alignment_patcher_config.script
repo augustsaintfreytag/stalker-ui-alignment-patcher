@@ -30,26 +30,26 @@ UI_CUSTOM_VALUE = {
 		["shniaga_wnd > shniaga > magnifire > y_offset"] = "-8"
 	},
 	["ui_options_16"] = {
-		["btn_accept"] = { y = "-1" },
-		["btn_reset"] = { y = "-1" },
-		["btn_default"] = { y = "-1" },
-		["btn_cancel"] = { y = "-1" }
+		["btn_accept > text"] = { y = "-1" },
+		["btn_reset > text"] = { y = "-1" },
+		["btn_default > text"] = { y = "-1" },
+		["btn_cancel > text"] = { y = "-1" }
 	},
 	["ui_mcm_16"] = {
-		["btn_accept"] = { y = "-1" },
-		["btn_reset"] = { y = "-1" },
-		["btn_default"] = { y = "-1" },
-		["btn_cancel"] = { y = "-1" },
+		["btn_accept > text"] = { y = "-1" },
+		["btn_reset > text"] = { y = "-1" },
+		["btn_default > text"] = { y = "-1" },
+		["btn_cancel > text"] = { y = "-1" },
 		["elements > btn_list"] = {
 			width = "103"
 		}
 	},
 	["ui_mm_faction_select_16"] = {
-		["btn_faction"] = { y = "-1" },
-		["btn_icon"] = { y = "-1" },
-		["btn_start"] = { y = "-1" },
-		["btn_random"] = { y = "-1" },
-		["btn_back"] = { y = "-1" },
+		["btn_faction > text"] = { y = "-1" },
+		["btn_icon > text"] = { y = "-1" },
+		["btn_start > text"] = { y = "-1" },
+		["btn_random > text"] = { y = "-1" },
+		["btn_back > text"] = { y = "-1" },
 		["check_reset > texture"] = "ui_inGame2_checkbox"
 	},
 	["utils_16"] = {
@@ -123,6 +123,22 @@ UI_CUSTOM_VALUE = {
 		["player > money"] = {
 			y = "120",
 			height = "25"
+		}
+	},
+	["maingame_pda_msg_16"] = {
+		["time_static"] = {
+			y = "2",
+			vert_align = "t"
+		},
+		["caption_static"] = {
+			y = "0",
+			width = "235",
+			vert_align = "t"
+		},
+		["msg_static"] = {
+			y = "16",
+			width = "285",
+			vert_align = "t"
 		}
 	}
 }
