@@ -1,5 +1,7 @@
 ![Engineer Inspection Yellow B 01](https://github.com/augustsaintfreytag/stalker-ui-alignment-patcher/assets/7656669/84f50532-dac1-4f71-9d51-ee164d911a1c)
 
+# STALKER UI Alignment Patcher
+
 A script mod for STALKER Anomaly (Open X-Ray) to inject alignment and layout attributes into user interface files using matching patterns for files and elements. Built using DXML to automatically patch user interface files on game load with excellent mod compatibility.
 
 > [!NOTE]
