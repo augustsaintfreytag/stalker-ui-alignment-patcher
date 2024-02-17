@@ -124,5 +124,21 @@ UI_CUSTOM_VALUE = {
 			y = "120",
 			height = "25"
 		}
+	},
+	["maingame_pda_msg_16"] = {
+		["time_static"] = {
+			y = "2",
+			vert_align = "t"
+		},
+		["caption_static"] = {
+			y = "0",
+			width = "235",
+			vert_align = "t"
+		},
+		["msg_static"] = {
+			y = "16",
+			width = "285",
+			vert_align = "t"
+		}
 	}
 }
