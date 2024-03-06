@@ -125,6 +125,11 @@ UI_CUSTOM_VALUE = {
 			height = "25"
 		}
 	},
+	["ui_items_cook_16"] = {
+		["btn_cook > text"] = {
+			y = "-1"
+		}
+	},
 	["maingame_pda_msg_16"] = {
 		["time_static"] = {
 			y = "2",
