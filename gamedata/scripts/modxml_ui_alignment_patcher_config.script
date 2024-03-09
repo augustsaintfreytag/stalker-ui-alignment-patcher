@@ -127,7 +127,7 @@ UI_CUSTOM_VALUE = {
 	},
 	["ui_items_cook_16"] = {
 		["btn_cook > text"] = {
-			y = "-1"
+			y = "-2"
 		}
 	},
 	["maingame_pda_msg_16"] = {
