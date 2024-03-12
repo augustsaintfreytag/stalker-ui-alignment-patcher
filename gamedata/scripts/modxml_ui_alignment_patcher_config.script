@@ -130,20 +130,183 @@ UI_CUSTOM_VALUE = {
 			y = "-2"
 		}
 	},
+	["pda_16"] = {
+		-- Backgrounds around tabs
+		["background_static"] = {},
+		-- "Guide to the Zone" label
+		["caption_static"] = {
+			y = "18"
+		},
+		["caption_static > text"] = {
+			complex_mode = "1",
+			vert_align = "c"
+		},
+		-- Clock (Right-side)
+		["clock_wnd"] = {
+			y = "36"
+		},
+		["clock_wnd > text"] = {
+			complex_mode = "1",
+			vert_align = "c"
+		}
+	},
+	["pda_taskboard_16"] = {
+		["btn_refresh_tasks"] = {
+			height = "16",
+			width = "14"
+		},
+		["btn_refresh_tasks > text"] = {
+			y = "2",
+			x = "20",
+			complex_mode = "0"
+		}
+	},
+	["pda_ranking_16"] = {
+		["stat_info > stat[y=103]"] = {
+			y = "111"
+		},
+		["stat_info > stat[y=144]"] = {
+			y = "148"
+		},
+		["stat_info > stat[y=179]"] = {
+			y = "183"
+		},
+		["stat_info > stat[y=214]"] = {
+			y = "217"
+		},
+		["stat_info > stat[y=264]"] = {
+			y = "265"
+		},
+		["coc_ranking_itm > name"] = {
+			x = "76"
+		},
+		["coc_ranking_itm > descr"] = {
+			x = "76"
+		},
+		["coc_ranking_itm_actor > name"] = {
+			x = "76"
+		},
+		["coc_ranking_itm_actor > descr"] = {
+			x = "76"
+		}
+	},
+	["pda_relations_16"] = {
+		["btn_to_text"] = {
+			width = "16",
+			height = "20",
+			y = "100"
+		},
+		["btn_to_text > text"] = {
+			x = "34",
+			y = "3",
+			complex_mode = "0",
+		},
+		["tab > caption"] = {
+			y = "23"
+		},
+		["tab > caption > text"] = {
+			y = "0"
+		},
+		["companion_background > text"] = {
+			y = "-23"
+		},
+		["companion_background"] = {
+			x = "28"
+		},
+		["companion_wnd"] = {
+			x = "28"
+		},
+		["auto_check > text"] = {
+			x = "-57",
+			y = "7",
+			align = "l"
+		}
+	},
+	["pda_contacts_16"] = {
+		["auto_check"] = {
+			y = "95"
+		},
+		["auto_check > text"] = {
+			y = "6"
+		},
+		["show_all"] = {
+			y = "95"
+		},
+		["show_all > text"] = {
+			y = "6"
+		}
+	},
+	["pda_encyclopedia_16"] = {
+		["frame1 > caption"] = {
+			y = "95"
+		},
+		["image_checkbox"] = {
+			y = "95"
+		},
+		["image_checkbox > text"] = {
+			y = "6"
+		},
+		["message_checkbox"] = {
+			y = "95"
+		},
+		["message_checkbox > text"] = {
+			y = "6"
+		}
+	},
+	["pda_radio_16"] = {},
+	["pda_logs_16"] = {
+		["filter_news"] = {
+			y = "95",
+		},
+		["filter_news > text"] = {
+			complex_mode = "0"
+		},
+		["filter_talk"] = {
+			y = "95",
+		},
+		["filter_talk > text"] = {
+			complex_mode = "0"
+		},
+		["period_caption"] = {
+			x = "528"
+		},
+		["period"] = {},
+		["period > text"] = {
+			complex_mode = "1"
+		},
+		["btn_prev_period"] = {
+			width = "16",
+			height = "20",
+			x = "636",
+			y = "96"
+		},
+		["btn_next_period"] = {
+			width = "16",
+			height = "20",
+			x = "760",
+			y = "96"
+		}
+	},
 	["maingame_pda_msg_16"] = {
 		["time_static"] = {
 			y = "2",
+		},
+		["time_static > text"] = {
 			vert_align = "t"
 		},
 		["caption_static"] = {
 			y = "0",
 			width = "235",
+		},
+		["caption_static > text"] = {
 			vert_align = "t"
 		},
 		["msg_static"] = {
 			y = "16",
-			width = "285",
+			width = "285"
+		},
+		["msg_static > text"] = {
 			vert_align = "t"
-		}
+		},
 	}
 }
