@@ -20,7 +20,7 @@ FORCE_PATCH_ALL_TEXT_ELEMENTS = false
 -- For example, pattern `button` will match `button`, but also `button_confirm`, `button_cancel`, and others.
 UI_TEXT_PARENT_ELEMENT_PATTERNS = { "text", "txt", "button", "btn", "diff", "compare", "cap", "list", "block",
 	"caption", "info", "rank", "name", "community", "money", "weight", "price",
-	"cost" }
+	"cost", "filter" }
 
 -- Custom value overrides for specific UI files and elements.
 -- Allows specifying a qualified selector to be resolved in a given UI file and a value to be set.
