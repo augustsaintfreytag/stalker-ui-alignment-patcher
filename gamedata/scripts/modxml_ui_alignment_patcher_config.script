@@ -135,7 +135,8 @@ UI_CUSTOM_VALUE = {
 		["background_static"] = {},
 		-- "Guide to the Zone" label
 		["caption_static"] = {
-			y = "18"
+			y = "17",
+			x = "26"
 		},
 		["caption_static > text"] = {
 			complex_mode = "1",
@@ -148,12 +149,16 @@ UI_CUSTOM_VALUE = {
 		["clock_wnd > text"] = {
 			complex_mode = "1",
 			vert_align = "c"
+		},
+		["battery_bar"] = {
+			y = "29"
 		}
 	},
 	["pda_taskboard_16"] = {
 		["btn_refresh_tasks"] = {
 			height = "16",
-			width = "14"
+			width = "14",
+			y = "100"
 		},
 		["btn_refresh_tasks > text"] = {
 			y = "2",
@@ -194,31 +199,26 @@ UI_CUSTOM_VALUE = {
 		["btn_to_text"] = {
 			width = "16",
 			height = "20",
-			y = "100"
+			y = "102"
 		},
 		["btn_to_text > text"] = {
-			x = "34",
+			x = "38",
 			y = "3",
 			complex_mode = "0",
 		},
 		["tab > caption"] = {
-			y = "23"
+			y = "22"
 		},
 		["tab > caption > text"] = {
 			y = "0"
 		},
-		["companion_background > text"] = {
-			y = "-23"
-		},
 		["companion_background"] = {
-			x = "28"
+			y = "42"
 		},
-		["companion_wnd"] = {
-			x = "28"
-		},
+		["companion_background > text"] = {},
 		["auto_check > text"] = {
-			x = "-57",
-			y = "7",
+			x = "-60",
+			y = "6",
 			align = "l"
 		}
 	},
@@ -227,13 +227,15 @@ UI_CUSTOM_VALUE = {
 			y = "95"
 		},
 		["auto_check > text"] = {
-			y = "6"
+			y = "7",
+			complex_mode = "0"
 		},
 		["show_all"] = {
 			y = "95"
 		},
 		["show_all > text"] = {
-			y = "6"
+			y = "7",
+			complex_mode = "0"
 		}
 	},
 	["pda_encyclopedia_16"] = {
@@ -244,13 +246,15 @@ UI_CUSTOM_VALUE = {
 			y = "95"
 		},
 		["image_checkbox > text"] = {
-			y = "6"
+			y = "7",
+			complex_mode = "0"
 		},
 		["message_checkbox"] = {
 			y = "95"
 		},
 		["message_checkbox > text"] = {
-			y = "6"
+			y = "7",
+			complex_mode = "0"
 		}
 	},
 	["pda_radio_16"] = {},
@@ -259,18 +263,24 @@ UI_CUSTOM_VALUE = {
 			y = "95",
 		},
 		["filter_news > text"] = {
+			y = "7",
 			complex_mode = "0"
 		},
 		["filter_talk"] = {
 			y = "95",
 		},
 		["filter_talk > text"] = {
+			y = "7",
 			complex_mode = "0"
 		},
 		["period_caption"] = {
-			x = "528"
+			x = "528",
+			y = "98"
 		},
-		["period"] = {},
+		["period"] = {
+			x = "640",
+			y = "98"
+		},
 		["period > text"] = {
 			complex_mode = "1"
 		},
@@ -278,14 +288,41 @@ UI_CUSTOM_VALUE = {
 			width = "16",
 			height = "20",
 			x = "636",
-			y = "96"
+			y = "100"
 		},
 		["btn_next_period"] = {
 			width = "16",
 			height = "20",
-			x = "760",
-			y = "96"
-		}
+			x = "757",
+			y = "100"
+		},
+		["center_caption"] = {
+			y = "155"
+		},
+		["logs_item > date_static"] = {
+			y = "0"
+		},
+		["logs_item > date_static > text"] = {
+			complex_mode = "1",
+			vert_align = "t"
+		},
+		["logs_item > caption_static"] = {
+			y = "0"
+		},
+		["logs_item > caption_static > text"] = {
+			complex_mode = "1",
+			vert_align = "t"
+		},
+		["logs_item > text_static"] = {
+			y = "16"
+		},
+		["logs_item > text_static > text"] = {
+			complex_mode = "1",
+			vert_align = "t"
+		},
+		["logs_item > image"] = {
+			y = "0"
+		},
 	},
 	["maingame_pda_msg_16"] = {
 		["time_static"] = {
