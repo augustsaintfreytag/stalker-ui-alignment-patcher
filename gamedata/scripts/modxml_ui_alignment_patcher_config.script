@@ -350,5 +350,13 @@ UI_CUSTOM_VALUE = {
 		["msg_static > text"] = {
 			vert_align = "t"
 		},
+	},
+	["ui_debug_launcher_16"] = {
+		["dbg_spawn_name_i > btn_name > text"] = {
+			y = "-1"
+		},
+		["dbg_spawn_name > btn_name > text"] = {
+			y = "-1"
+		},
 	}
 }
