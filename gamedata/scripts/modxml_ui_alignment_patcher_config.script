@@ -20,7 +20,7 @@ FORCE_PATCH_ALL_TEXT_ELEMENTS = false
 -- For example, pattern `button` will match `button`, but also `button_confirm`, `button_cancel`, and others.
 UI_TEXT_PARENT_ELEMENT_PATTERNS = { "text", "txt", "button", "btn", "diff", "compare", "cap", "list", "block",
 	"caption", "info", "rank", "name", "community", "money", "weight", "price",
-	"cost" }
+	"cost", "filter" }
 
 -- Custom value overrides for specific UI files and elements.
 -- Allows specifying a qualified selector to be resolved in a given UI file and a value to be set.
@@ -51,6 +51,11 @@ UI_CUSTOM_VALUE = {
 		["btn_random > text"] = { y = "-1" },
 		["btn_back > text"] = { y = "-1" },
 		["check_reset > texture"] = "ui_inGame2_checkbox"
+	},
+	["ui_mm_load_dlg_16"] = {
+		["btn_load > text"] = { y = "-1" },
+		["btn_delete > text"] = { y = "-1" },
+		["btn_cancel > text"] = { y = "-1" }
 	},
 	["utils_16"] = {
 		["item_info > weight"] = {
@@ -130,20 +135,228 @@ UI_CUSTOM_VALUE = {
 			y = "-2"
 		}
 	},
+	["pda_16"] = {
+		-- Backgrounds around tabs
+		["background_static"] = {},
+		-- "Guide to the Zone" label
+		["caption_static"] = {
+			y = "17",
+			x = "26"
+		},
+		["caption_static > text"] = {
+			complex_mode = "1",
+			vert_align = "c"
+		},
+		-- Clock (Right-side)
+		["clock_wnd"] = {
+			y = "36"
+		},
+		["clock_wnd > text"] = {
+			complex_mode = "1",
+			vert_align = "c"
+		},
+		["battery_bar"] = {
+			y = "29"
+		}
+	},
+	["pda_taskboard_16"] = {
+		["btn_refresh_tasks"] = {
+			height = "16",
+			width = "14",
+			y = "100"
+		},
+		["btn_refresh_tasks > text"] = {
+			y = "2",
+			x = "20",
+			complex_mode = "0"
+		}
+	},
+	["pda_ranking_16"] = {
+		["stat_info > stat[y=103]"] = {
+			y = "111"
+		},
+		["stat_info > stat[y=144]"] = {
+			y = "148"
+		},
+		["stat_info > stat[y=179]"] = {
+			y = "183"
+		},
+		["stat_info > stat[y=214]"] = {
+			y = "217"
+		},
+		["stat_info > stat[y=264]"] = {
+			y = "265"
+		},
+		["coc_ranking_itm > name"] = {
+			x = "76"
+		},
+		["coc_ranking_itm > descr"] = {
+			x = "76"
+		},
+		["coc_ranking_itm_actor > name"] = {
+			x = "76"
+		},
+		["coc_ranking_itm_actor > descr"] = {
+			x = "76"
+		}
+	},
+	["pda_relations_16"] = {
+		["btn_to_text"] = {
+			width = "16",
+			height = "20",
+			y = "102"
+		},
+		["btn_to_text > text"] = {
+			x = "38",
+			y = "3",
+			complex_mode = "0",
+		},
+		["tab > caption"] = {
+			y = "22"
+		},
+		["tab > caption > text"] = {
+			y = "0"
+		},
+		["companion_background"] = {
+			y = "42"
+		},
+		["companion_background > text"] = {},
+		["auto_check > text"] = {
+			x = "-60",
+			y = "6",
+			align = "l"
+		}
+	},
+	["pda_contacts_16"] = {
+		["auto_check"] = {
+			y = "95"
+		},
+		["auto_check > text"] = {
+			y = "7",
+			complex_mode = "0"
+		},
+		["show_all"] = {
+			y = "95"
+		},
+		["show_all > text"] = {
+			y = "7",
+			complex_mode = "0"
+		}
+	},
+	["pda_encyclopedia_16"] = {
+		["frame1 > caption"] = {
+			y = "95"
+		},
+		["image_checkbox"] = {
+			y = "95"
+		},
+		["image_checkbox > text"] = {
+			y = "7",
+			complex_mode = "0"
+		},
+		["message_checkbox"] = {
+			y = "95"
+		},
+		["message_checkbox > text"] = {
+			y = "7",
+			complex_mode = "0"
+		}
+	},
+	["pda_radio_16"] = {},
+	["pda_logs_16"] = {
+		["filter_news"] = {
+			y = "95",
+		},
+		["filter_news > text"] = {
+			y = "7",
+			complex_mode = "0"
+		},
+		["filter_talk"] = {
+			y = "95",
+		},
+		["filter_talk > text"] = {
+			y = "7",
+			complex_mode = "0"
+		},
+		["period_caption"] = {
+			x = "528",
+			y = "98"
+		},
+		["period"] = {
+			x = "640",
+			y = "98"
+		},
+		["period > text"] = {
+			complex_mode = "1"
+		},
+		["btn_prev_period"] = {
+			width = "16",
+			height = "20",
+			x = "636",
+			y = "100"
+		},
+		["btn_next_period"] = {
+			width = "16",
+			height = "20",
+			x = "757",
+			y = "100"
+		},
+		["center_caption"] = {
+			y = "155"
+		},
+		["logs_item > date_static"] = {
+			y = "0"
+		},
+		["logs_item > date_static > text"] = {
+			complex_mode = "1",
+			vert_align = "t"
+		},
+		["logs_item > caption_static"] = {
+			y = "0"
+		},
+		["logs_item > caption_static > text"] = {
+			complex_mode = "1",
+			vert_align = "t"
+		},
+		["logs_item > text_static"] = {
+			y = "16"
+		},
+		["logs_item > text_static > text"] = {
+			complex_mode = "1",
+			vert_align = "t"
+		},
+		["logs_item > image"] = {
+			y = "0"
+		},
+	},
 	["maingame_pda_msg_16"] = {
 		["time_static"] = {
 			y = "2",
+		},
+		["time_static > text"] = {
 			vert_align = "t"
 		},
 		["caption_static"] = {
-			y = "0",
+			y = "2",
 			width = "235",
+		},
+		["caption_static > text"] = {
 			vert_align = "t"
 		},
 		["msg_static"] = {
 			y = "16",
-			width = "285",
+			width = "285"
+		},
+		["msg_static > text"] = {
 			vert_align = "t"
-		}
+		},
+	},
+	["ui_debug_launcher_16"] = {
+		["dbg_spawn_name_i > btn_name > text"] = {
+			y = "-1"
+		},
+		["dbg_spawn_name > btn_name > text"] = {
+			y = "-1"
+		},
 	}
 }
