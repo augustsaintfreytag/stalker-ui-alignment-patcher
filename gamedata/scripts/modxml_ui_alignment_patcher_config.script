@@ -332,12 +332,14 @@ UI_CUSTOM_VALUE = {
 	["maingame_pda_msg_16"] = {
 		["time_static"] = {
 			y = "2",
+			x = "47"
 		},
 		["time_static > text"] = {
 			vert_align = "t"
 		},
 		["caption_static"] = {
-			y = "2",
+			y = "1",
+			x = "76",
 			width = "235",
 		},
 		["caption_static > text"] = {
@@ -345,6 +347,7 @@ UI_CUSTOM_VALUE = {
 		},
 		["msg_static"] = {
 			y = "16",
+			x = "47",
 			width = "285"
 		},
 		["msg_static > text"] = {
