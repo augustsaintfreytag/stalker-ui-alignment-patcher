@@ -50,7 +50,58 @@ UI_CUSTOM_VALUE = {
 		["btn_start > text"] = { y = "-1" },
 		["btn_random > text"] = { y = "-1" },
 		["btn_back > text"] = { y = "-1" },
+		-- Name and money labels
+		["cap_name"] = { x = "305" },
+		["input_name"] = { x = "342" },
+		["cap_money"] = { x = "500" },
+		["text_money"] = { x = "540" },
+		-- Loose reset loadout checkbox
+		["check_reset"] = { y = "227" },
+		-- Difficulty and progression selection
+		["list_difficulty"] = { y = "145" },
+		["list_economy"] = { y = "206" },
+		-- Spacing between checkbox and label: 30 units horizontal, 5 units vertical
+		-- Spacing between label and dropdown: 22 units vertical
+		-- Above starting location selection: Accessible Zone
+		["options > check_routes"] = { y = "20", x = "0" },
+		["options > cap_check_routes"] = { y = "25", x = "30", width = "60" },
+		-- First row options: Story Mode, Azazel Mode
+		["options > check_story"] = { y = "95", x = "0" },
+		["options > cap_check_story"] = { y = "100", x = "30", width = "60" },
+		["options > check_azazel_mode"] = { y = "95", x = "130" },
+		["options > cap_check_azazel_mode"] = { y = "100", x = "160", width = "60" },
+		-- Second row options: Survival Mode, Soulslike Mode
+		-- (Soulslike elements are kept in `soulslike_ui_mm_gamemode_16` but included for consistency)
+		["options > check_survival"] = { y = "135", x = "0" },
+		["options > cap_check_survival"] = { y = "140", x = "30", width = "60" },
+		["options > check_soulslike_mode"] = { y = "135", x = "130" },
+		["options > cap_check_soulslike_mode"] = { y = "140", x = "160", width = "60" },
+		-- Third row options: Ironman Mode, Warfare Mode
+		["options > check_hardcore"] = { y = "175", x = "0" },
+		["options > cap_check_hardcore"] = { y = "180", x = "30", width = "60" },
+		["options > check_warfare"] = { y = "175", x = "130" },
+		["options > cap_check_warfare"] = { y = "180", x = "160", width = "60" },
+		-- Ironman lives, life granter options
+		["options > cap_list_hardcore_lives"] = { y = "210", x = "30", width = "60" },
+		["options > cap_list_hardcore_regen"] = { y = "210", x = "140", width = "60" },
+		["options > list_hardcore_lives"] = { y = "232", x = "30" },
+		["options > list_hardcore_regen"] = { y = "232", x = "140" },
+		-- Fourth row options: Agony Mode, Campfire Mode
+		["options > check_conditions"] = { y = "263", x = "0" },
+		["options > cap_check_conditions"] = { y = "268", x = "30", width = "60" },
+		["options > check_campfire"] = { y = "263", x = "130" },
+		["options > cap_check_campfire"] = { y = "268", x = "160", width = "60" },
+		-- Save timer mode options
+		["options > cap_list_timer"] = { y = "292", x = "30", width = "60" },
+		["options > list_timer"] = { y = "314", x = "30" },
+		-- Use left-alignment for all label elements
+		["options text"] = { align = "l" },
+		-- Use regular checkbox (instead of radio button) for reset
 		["check_reset > texture"] = "ui_inGame2_checkbox"
+	},
+	["soulslike_ui_mm_gamemode_16"] = {
+		["options > check_soulslike_mode"] = { y = "135", x = "130" },
+		["options > cap_check_soulslike_mode"] = { y = "140", x = "160", width = "60" }
 	},
 	["ui_mm_load_dlg_16"] = {
 		["btn_load > text"] = { y = "-1" },
