@@ -146,3 +146,25 @@ function file_name_from_scope_name(scope_name)
 
 	return file_name
 end
+
+-- Debug
+
+function debug_description_for_table(tbl, indent)
+	if not type(tbl) == "table" then return tostring(tbl) end
+
+	if not indent then indent = 0 end
+
+	local tostr = string.rep(" ", indent)
+	tostr = tostr .. "{\r\n"
+
+	for k, v in pairs(tbl) do
+		if type(k) ~= "number" then k = '"' .. k .. '"' end
+		if type(v) == "table" then
+			tostr = tostr .. string.rep(" ", indent + 2) .. "[" .. k .. "] = " .. tableToString(v, indent + 2) .. ",\r\n"
+		else
+			tostr = tostr .. string.rep(" ", indent + 2) .. "[" .. k .. "] = " .. tostring(v) .. ",\r\n"
+		end
+	end
+
+	return tostr .. string.rep(" ", indent) .. "}"
+end
