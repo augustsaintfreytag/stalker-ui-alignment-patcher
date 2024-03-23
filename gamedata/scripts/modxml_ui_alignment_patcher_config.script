@@ -51,8 +51,8 @@ UI_CUSTOM_VALUE = {
 		["btn_random > text"] = { y = "-1" },
 		["btn_back > text"] = { y = "-1" },
 		-- Name, money, points, heading labels
-		["main_dialog > scroll_desc"] = { x = 290 },
-		["main_dialog > text_descr"] = { x = 290 },
+		["main_dialog > scroll_desc"] = { x = 295 },
+		["main_dialog > text_descr"] = { x = 295 },
 		["main_dialog > cap_name"] = { y = 168, x = 295, height = 18 },
 		["main_dialog > input_name"] = { y = 168, x = 342, height = 18 },
 		["main_dialog > cap_money"] = { y = 172, x = 500, height = 18 },
