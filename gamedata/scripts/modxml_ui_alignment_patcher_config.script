@@ -53,10 +53,10 @@ UI_CUSTOM_VALUE = {
 		-- Name, money, points, heading labels
 		["main_dialog > scroll_desc"] = { x = 295 },
 		["main_dialog > text_descr"] = { x = 295 },
-		["main_dialog > cap_name"] = { y = 168, x = 295, height = 18 },
-		["main_dialog > input_name"] = { y = 168, x = 342, height = 18 },
+		["main_dialog > cap_name"] = { y = 172, x = 295, height = 18 },
+		["main_dialog > input_name"] = { y = 172, x = 322, height = 18 },
 		["main_dialog > cap_money"] = { y = 172, x = 500, height = 18 },
-		["main_dialog > text_money"] = { y = 172, x = 540, height = 18 },
+		["main_dialog > text_money"] = { y = 172, x = 530, height = 18 },
 		["main_dialog > cap_inventory"] = { y = 230, x = 295, height = 18 },
 		["main_dialog > cap_points_used"] = { y = 230, x = 377, height = 18 },
 		["main_dialog > text_points_used"] = { y = 230, x = 455, height = 18 },
@@ -109,11 +109,6 @@ UI_CUSTOM_VALUE = {
 	["soulslike_ui_mm_gamemode_16"] = {
 		["options > check_soulslike_mode"] = { y = 135, x = 130, width = 35, height = 30 },
 		["options > cap_check_soulslike_mode"] = { y = 140, x = 160, width = 60 },
-	},
-	["ui_mm_load_dlg_16"] = {
-		["btn_load > text"] = { y = "-1" },
-		["btn_delete > text"] = { y = "-1" },
-		["btn_cancel > text"] = { y = "-1" }
 	},
 	["utils_16"] = {
 		["item_info > weight"] = { y = 20, x = 325 },
