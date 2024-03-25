@@ -69,7 +69,7 @@ function patch_xml_file(file_name, xml_obj)
 		for _, pattern in ipairs(CONFIG.UI_TEXT_PARENT_ELEMENT_PATTERNS) do
 			-- Check if parent tag matches pattern for patching.
 			if CONFIG.FORCE_PATCH_ALL_TEXT_ELEMENTS or string.find(parent_tag, pattern) then
-				-- log("DXML UI patcher modifying text element '%s' with parent '%s'.", text_tag, parent_tag)
+				log("DXML UI patcher modifying text element '%s' with parent '%s'.", text_tag, parent_tag)
 				patch_text_element(xml_obj, text_element_object)
 			end
 		end
@@ -98,10 +98,11 @@ function patch_custom_values(file_name, xml_obj)
 			local element_tag = tag_from_element(element_object.el)
 
 			if type(value) == "table" then
-				log("DXML UI patcher applying custom values in '%s', set to '%s'.", element_tag, value)
+				log("DXML UI patcher applying custom attributes to '%s', set to '%s'.", element_tag,
+					debug_description_for_table(value))
 				xml_obj:setElementAttr(element_object, value)
 			else
-				log("DXML UI patcher applying custom value in '%s', set to '%s'.", element_tag, value)
+				log("DXML UI patcher applying custom value to '%s', set to '%s'.", element_tag, value)
 				xml_obj:setText(element_object, value)
 			end
 
@@ -145,4 +146,32 @@ function file_name_from_scope_name(scope_name)
 	local file_name = string.sub(file_name_with_extension, 1, index_of_extension_separator - 1)
 
 	return file_name
+end
+
+-- Debug
+
+function debug_description_for_table(tbl)
+	if not type(tbl) == "table" then return tostring(tbl) end
+
+	local result = "{ "
+
+	for k, v in pairs(tbl) do
+		-- If the key is a string, surround it with quotes
+		if type(k) == "string" then
+			k = '"' .. k .. '"'
+		end
+
+		-- If the value is a string, surround it with quotes
+		if type(v) == "string" then
+			v = '"' .. v .. '"'
+		end
+
+		-- Add the key-value pair to the result string
+		result = result .. k .. " = " .. tostring(v) .. ", "
+	end
+
+	-- Remove the last comma and space, and add the closing brace
+	result = result:sub(1, -3) .. " }"
+
+	return result
 end

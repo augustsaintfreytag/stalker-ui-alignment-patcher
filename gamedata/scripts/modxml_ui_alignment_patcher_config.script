@@ -35,13 +35,23 @@ UI_CUSTOM_VALUE = {
 		["btn_default > text"] = { y = "-1" },
 		["btn_cancel > text"] = { y = "-1" }
 	},
+	["ui_mm_load_dlg_16"] = {
+		["btn_load > text"] = { y = "-1" },
+		["btn_delete > text"] = { y = "-1" },
+		["btn_cancel > text"] = { y = "-1" }
+	},
+	["ui_mm_save_dlg_16"] = {
+		["btn_save > text"] = { y = "-1" },
+		["btn_delete > text"] = { y = "-1" },
+		["btn_cancel > text"] = { y = "-1" }
+	},
 	["ui_mcm_16"] = {
 		["btn_accept > text"] = { y = "-1" },
 		["btn_reset > text"] = { y = "-1" },
 		["btn_default > text"] = { y = "-1" },
 		["btn_cancel > text"] = { y = "-1" },
 		["elements > btn_list"] = {
-			width = "103"
+			width = 103
 		}
 	},
 	["ui_mm_faction_select_16"] = {
@@ -50,316 +60,172 @@ UI_CUSTOM_VALUE = {
 		["btn_start > text"] = { y = "-1" },
 		["btn_random > text"] = { y = "-1" },
 		["btn_back > text"] = { y = "-1" },
-		["check_reset > texture"] = "ui_inGame2_checkbox"
+		-- Name, money, points, heading labels
+		["main_dialog > scroll_desc"] = { x = 295 },
+		["main_dialog > text_descr"] = { x = 295 },
+		["main_dialog > cap_name"] = { y = 172, x = 295, height = 18 },
+		["main_dialog > input_name"] = { y = 172, x = 322, height = 18 },
+		["main_dialog > cap_money"] = { y = 172, x = 500, height = 18 },
+		["main_dialog > text_money"] = { y = 172, x = 530, height = 18 },
+		["main_dialog > cap_inventory"] = { y = 230, x = 295, height = 18 },
+		["main_dialog > cap_points_used"] = { y = 230, x = 377, height = 18 },
+		["main_dialog > text_points_used"] = { y = 230, x = 455, height = 18 },
+		["main_dialog > cap_loadout"] = { y = 443, x = 295, height = 18 },
+		["main_dialog > cap_points_left"] = { y = 443, x = 377, height = 18 },
+		["main_dialog > text_points_left"] = { y = 443, x = 455, height = 18 },
+		["main_dialog > list_map"] = { y = 302 },
+		-- Loose reset loadout checkbox
+		["check_reset"] = { y = 227 },
+		-- Difficulty and progression selection
+		["list_difficulty"] = { y = 145, height = 30, stretch = 1 },
+		["list_economy"] = { y = 206, height = 30, stretch = 1 },
+		-- Spacing between checkbox and label: 30 units horizontal, 5 units vertical
+		-- Spacing between label and dropdown: 22 units vertical
+		-- Above starting location selection: Accessible Zone
+		["options > check_routes"] = { y = 20, x = 0 },
+		["options > cap_check_routes"] = { y = 25, x = 30, width = 60 },
+		-- First row options: Story Mode, Azazel Mode
+		["options > check_story"] = { y = 95, x = 0 },
+		["options > cap_check_story"] = { y = 100, x = 30, width = 60 },
+		["options > check_azazel_mode"] = { y = 95, x = 130 },
+		["options > cap_check_azazel_mode"] = { y = 100, x = 160, width = 60 },
+		-- Second row options: Survival Mode, Soulslike Mode
+		-- (Soulslike elements are kept in `soulslike_ui_mm_gamemode_16` but included for consistency)
+		["options > check_survival"] = { y = 135, x = 0 },
+		["options > cap_check_survival"] = { y = 140, x = 30, width = 60 },
+		-- Third row options: Ironman Mode, Warfare Mode
+		["options > check_hardcore"] = { y = 175, x = 0 },
+		["options > cap_check_hardcore"] = { y = 180, x = 30, width = 60 },
+		["options > check_warfare"] = { y = 175, x = 130 },
+		["options > cap_check_warfare"] = { y = 180, x = 160, width = 60 },
+		-- Ironman lives, life granter options
+		["options > cap_list_hardcore_lives"] = { y = 210, x = 30, width = 60 },
+		["options > cap_list_hardcore_regen"] = { y = 210, x = 140, width = 60 },
+		["options > list_hardcore_lives"] = { y = 232, x = 30 },
+		["options > list_hardcore_regen"] = { y = 232, x = 140 },
+		-- Fourth row options: Agony Mode, Campfire Mode
+		["options > check_conditions"] = { y = 283, x = 0 },
+		["options > cap_check_conditions"] = { y = 288, x = 30, width = 60 },
+		["options > check_campfire"] = { y = 283, x = 130 },
+		["options > cap_check_campfire"] = { y = 288, x = 160, width = 60 },
+		-- Save timer mode options
+		["options > cap_list_timer"] = { y = 318, x = 30, width = 60 },
+		["options > list_timer"] = { y = 340, x = 30 },
+		-- Use complex mode, horizontal left alignment, center vertical alignment, and basic color for all label elements
+		["options text"] = { complex_mode = 1, align = "l", vert_align = "c", r = 170, g = 170, b = 170 },
+		-- Use regular checkbox (instead of radio button) for reset
+		["check_reset > texture"] = "ui_inGame2_checkbox",
+		-- Portrait selection window
+		["popup_faction > cap_faction"] = { width = "200" },
+		["popup_faction > cap_faction > text"] = { align = "l" },
+		-- Faction selection window
+		["popup_icon > cap_icon"] = { width = "200" },
+		["popup_icon > cap_icon > text"] = { align = "l" }
 	},
-	["ui_mm_load_dlg_16"] = {
-		["btn_load > text"] = { y = "-1" },
-		["btn_delete > text"] = { y = "-1" },
-		["btn_cancel > text"] = { y = "-1" }
+	["soulslike_ui_mm_gamemode_16"] = {
+		["options > check_soulslike_mode"] = { y = 135, x = 130, width = 35, height = 30 },
+		["options > cap_check_soulslike_mode"] = { y = 140, x = 160, width = 60 },
 	},
 	["utils_16"] = {
-		["item_info > weight"] = {
-			y = "20",
-			x = "325"
-		},
-		["item_info > cost"] = {
-			y = "-1000"
-		},
-		["item_info > no_trade"] = {
-			y = "-1000",
-			width = "0",
-			height = "0"
-		},
-		["item_info > description"] = {
-			y = "40"
-		},
-		["item_info > description > text"] = {
-			complex_mode = "1",
-			vert_align = "t"
-		},
-		["stats_box > cap"] = {
-			height = "18",
-			y = "0",
-			x = "15"
-		},
-		["stats_box > diff"] = {
-			height = "18",
-			y = "0",
-			x = "180"
-		},
-		["stats_box > prog_txt"] = {
-			height = "18",
-			y = "0"
-		},
-		["stats_box > compare"] = {
-			height = "18",
-			y = "0"
-		},
-		["stats_box > icon"] = {
-			height = "14",
-			width = "10",
-			y = "2",
-			x = "2"
-		},
-		["ammo_type > cap_ammo_types"] = {
-			x = "12",
-			width = "52"
-		},
-		["ammo_type > cap_ammo_used_type"] = {
-			x = "58"
-		},
-		["ammo_type > cap_ammo_types > text"] = {
-			complex_mode = "0",
-			vert_align = "t",
-			color = "ui_gray_3"
-		},
-		["ammo_type > cap_ammo_used_type > text"] = {
-			complex_mode = "0",
-			vert_align = "t",
-			color = "ui_gray_3"
-		}
+		["item_info > weight"] = { y = 20, x = 325 },
+		["item_info > cost"] = { y = "-1000" },
+		["item_info > no_trade"] = { y = "-1000", width = 0, height = 0 },
+		["item_info > description"] = { y = 40 },
+		["item_info > description > text"] = { complex_mode = 1, vert_align = "t" },
+		["stats_box > cap"] = { height = 18, y = 0, x = 15 },
+		["stats_box > diff"] = { height = 18, y = 0, x = 180 },
+		["stats_box > prog_txt"] = { height = 18, y = 0 },
+		["stats_box > compare"] = { height = 18, y = 0 },
+		["stats_box > icon"] = { height = 14, width = 10, y = 2, x = 2 },
+		["ammo_type > cap_ammo_types"] = { x = 12, width = 52 },
+		["ammo_type > cap_ammo_used_type"] = { x = 58 },
+		["ammo_type > cap_ammo_types > text"] = { complex_mode = 0, vert_align = "t", color = "ui_gray_3" },
+		["ammo_type > cap_ammo_used_type > text"] = { complex_mode = 0, vert_align = "t", color = "ui_gray_3" }
 	},
 	["actor_menu_16"] = {
-		["wpn_params > cap_ammo_used_type"] = {
-			x = "180"
-		}
+		["wpn_params > cap_ammo_used_type"] = { x = 180 }
 	},
 	["ui_inventory_16"] = {
-		["player > money"] = {
-			y = "120",
-			height = "25"
-		}
+		["player > money"] = { y = 120, height = 25 }
 	},
 	["ui_items_cook_16"] = {
-		["btn_cook > text"] = {
-			y = "-2"
-		}
+		["btn_cook > text"] = { y = "-2" }
 	},
 	["pda_16"] = {
-		-- Backgrounds around tabs
 		["background_static"] = {},
-		-- "Guide to the Zone" label
-		["caption_static"] = {
-			y = "17",
-			x = "26"
-		},
-		["caption_static > text"] = {
-			complex_mode = "1",
-			vert_align = "c"
-		},
-		-- Clock (Right-side)
-		["clock_wnd"] = {
-			y = "36"
-		},
-		["clock_wnd > text"] = {
-			complex_mode = "1",
-			vert_align = "c"
-		},
-		["battery_bar"] = {
-			y = "29"
-		}
+		["caption_static"] = { y = 17, x = 26 },
+		["caption_static > text"] = { complex_mode = 1, vert_align = "c" },
+		["clock_wnd"] = { y = 36 },
+		["clock_wnd > text"] = { complex_mode = 1, vert_align = "c" },
+		["battery_bar"] = { y = 29 }
 	},
 	["pda_taskboard_16"] = {
-		["btn_refresh_tasks"] = {
-			height = "16",
-			width = "14",
-			y = "100"
-		},
-		["btn_refresh_tasks > text"] = {
-			y = "2",
-			x = "20",
-			complex_mode = "0"
-		}
+		["btn_refresh_tasks"] = { height = 16, width = 14, y = 100 },
+		["btn_refresh_tasks > text"] = { y = 2, x = 20, complex_mode = 0 }
 	},
 	["pda_ranking_16"] = {
-		["stat_info > stat[y=103]"] = {
-			y = "111"
-		},
-		["stat_info > stat[y=144]"] = {
-			y = "148"
-		},
-		["stat_info > stat[y=179]"] = {
-			y = "183"
-		},
-		["stat_info > stat[y=214]"] = {
-			y = "217"
-		},
-		["stat_info > stat[y=264]"] = {
-			y = "265"
-		},
-		["coc_ranking_itm > name"] = {
-			x = "76"
-		},
-		["coc_ranking_itm > descr"] = {
-			x = "76"
-		},
-		["coc_ranking_itm_actor > name"] = {
-			x = "76"
-		},
-		["coc_ranking_itm_actor > descr"] = {
-			x = "76"
-		}
+		["stat_info > stat[y=103]"] = { y = 111 },
+		["stat_info > stat[y=144]"] = { y = 148 },
+		["stat_info > stat[y=179]"] = { y = 183 },
+		["stat_info > stat[y=214]"] = { y = 217 },
+		["stat_info > stat[y=264]"] = { y = 265 },
+		["coc_ranking_itm > name"] = { x = 76 },
+		["coc_ranking_itm > descr"] = { x = 76 },
+		["coc_ranking_itm_actor > name"] = { x = 76 },
+		["coc_ranking_itm_actor > descr"] = { x = 76 }
 	},
 	["pda_relations_16"] = {
-		["btn_to_text"] = {
-			width = "16",
-			height = "20",
-			y = "102"
-		},
-		["btn_to_text > text"] = {
-			x = "38",
-			y = "3",
-			complex_mode = "0",
-		},
-		["tab > caption"] = {
-			y = "22"
-		},
-		["tab > caption > text"] = {
-			y = "0"
-		},
-		["companion_background"] = {
-			y = "42"
-		},
+		["btn_to_text"] = { width = 16, height = 20, y = 102 },
+		["btn_to_text > text"] = { x = 38, y = 3, complex_mode = 0 },
+		["tab > caption"] = { y = 22 },
+		["tab > caption > text"] = { y = 0 },
+		["companion_background"] = { y = 42 },
 		["companion_background > text"] = {},
-		["auto_check > text"] = {
-			x = "-60",
-			y = "6",
-			align = "l"
-		}
+		["auto_check > text"] = { x = "-60", y = 6, align = "l" }
 	},
 	["pda_contacts_16"] = {
-		["auto_check"] = {
-			y = "95"
-		},
-		["auto_check > text"] = {
-			y = "7",
-			complex_mode = "0"
-		},
-		["show_all"] = {
-			y = "95"
-		},
-		["show_all > text"] = {
-			y = "7",
-			complex_mode = "0"
-		}
+		["auto_check"] = { y = 95 },
+		["auto_check > text"] = { y = 7, complex_mode = 0 },
+		["show_all"] = { y = 95 },
+		["show_all > text"] = { y = 7, complex_mode = 0 }
 	},
 	["pda_encyclopedia_16"] = {
-		["frame1 > caption"] = {
-			y = "95"
-		},
-		["image_checkbox"] = {
-			y = "95"
-		},
-		["image_checkbox > text"] = {
-			y = "7",
-			complex_mode = "0"
-		},
-		["message_checkbox"] = {
-			y = "95"
-		},
-		["message_checkbox > text"] = {
-			y = "7",
-			complex_mode = "0"
-		}
+		["frame1 > caption"] = { y = 95 },
+		["image_checkbox"] = { y = 95 },
+		["image_checkbox > text"] = { y = 7, complex_mode = 0 },
+		["message_checkbox"] = { y = 95 },
+		["message_checkbox > text"] = { y = 7, complex_mode = 0 }
 	},
 	["pda_radio_16"] = {},
 	["pda_logs_16"] = {
-		["filter_news"] = {
-			y = "95",
-		},
-		["filter_news > text"] = {
-			y = "7",
-			complex_mode = "0"
-		},
-		["filter_talk"] = {
-			y = "95",
-		},
-		["filter_talk > text"] = {
-			y = "7",
-			complex_mode = "0"
-		},
-		["period_caption"] = {
-			x = "528",
-			y = "98"
-		},
-		["period"] = {
-			x = "640",
-			y = "98"
-		},
-		["period > text"] = {
-			complex_mode = "1"
-		},
-		["btn_prev_period"] = {
-			width = "16",
-			height = "20",
-			x = "636",
-			y = "100"
-		},
-		["btn_next_period"] = {
-			width = "16",
-			height = "20",
-			x = "757",
-			y = "100"
-		},
-		["center_caption"] = {
-			y = "155"
-		},
-		["logs_item > date_static"] = {
-			y = "0"
-		},
-		["logs_item > date_static > text"] = {
-			complex_mode = "1",
-			vert_align = "t"
-		},
-		["logs_item > caption_static"] = {
-			y = "0"
-		},
-		["logs_item > caption_static > text"] = {
-			complex_mode = "1",
-			vert_align = "t"
-		},
-		["logs_item > text_static"] = {
-			y = "16"
-		},
-		["logs_item > text_static > text"] = {
-			complex_mode = "1",
-			vert_align = "t"
-		},
-		["logs_item > image"] = {
-			y = "0"
-		},
+		["filter_news"] = { y = 95 },
+		["filter_news > text"] = { y = 7, complex_mode = 0 },
+		["filter_talk"] = { y = 95 },
+		["filter_talk > text"] = { y = 7, complex_mode = 0 },
+		["period_caption"] = { x = 528, y = 98 },
+		["period"] = { x = 640, y = 98 },
+		["period > text"] = { complex_mode = 1 },
+		["btn_prev_period"] = { width = 16, height = 20, x = 636, y = 100 },
+		["btn_next_period"] = { width = 16, height = 20, x = 757, y = 100 },
+		["center_caption"] = { y = 155 },
+		["logs_item > date_static"] = { y = 0 },
+		["logs_item > date_static > text"] = { complex_mode = 1, vert_align = "t" },
+		["logs_item > caption_static"] = { y = 0 },
+		["logs_item > caption_static > text"] = { complex_mode = 1, vert_align = "t" },
+		["logs_item > text_static"] = { y = 16 },
+		["logs_item > text_static > text"] = { complex_mode = 1, vert_align = "t" },
+		["logs_item > image"] = { y = 0 }
 	},
 	["maingame_pda_msg_16"] = {
-		["time_static"] = {
-			y = "2",
-			x = "47"
-		},
-		["time_static > text"] = {
-			vert_align = "t"
-		},
-		["caption_static"] = {
-			y = "1",
-			x = "76",
-			width = "235",
-		},
-		["caption_static > text"] = {
-			vert_align = "t"
-		},
-		["msg_static"] = {
-			y = "16",
-			x = "47",
-			width = "285"
-		},
-		["msg_static > text"] = {
-			vert_align = "t"
-		},
+		["time_static"] = { y = 2, x = 47 },
+		["time_static > text"] = { vert_align = "t" },
+		["caption_static"] = { y = 1, x = 76, width = 235 },
+		["caption_static > text"] = { vert_align = "t" },
+		["msg_static"] = { y = 16, x = 47, width = 285 },
+		["msg_static > text"] = { vert_align = "t" }
 	},
 	["ui_debug_launcher_16"] = {
-		["dbg_spawn_name_i > btn_name > text"] = {
-			y = "-1"
-		},
-		["dbg_spawn_name > btn_name > text"] = {
-			y = "-1"
-		},
+		["dbg_spawn_name_i > btn_name > text"] = { y = "-1" },
+		["dbg_spawn_name > btn_name > text"] = { y = "-1" }
 	}
 }
