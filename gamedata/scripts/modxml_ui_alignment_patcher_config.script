@@ -104,7 +104,13 @@ UI_CUSTOM_VALUE = {
 		-- Use complex mode, horizontal left alignment, center vertical alignment, and basic color for all label elements
 		["options text"] = { complex_mode = 1, align = "l", vert_align = "c", r = 170, g = 170, b = 170 },
 		-- Use regular checkbox (instead of radio button) for reset
-		["check_reset > texture"] = "ui_inGame2_checkbox"
+		["check_reset > texture"] = "ui_inGame2_checkbox",
+		-- Portrait selection window
+		["popup_faction > cap_faction"] = { width = "200" },
+		["popup_faction > cap_faction > text"] = { align = "l" },
+		-- Faction selection window
+		["popup_icon > cap_icon"] = { width = "200" },
+		["popup_icon > cap_icon > text"] = { align = "l" }
 	},
 	["soulslike_ui_mm_gamemode_16"] = {
 		["options > check_soulslike_mode"] = { y = 135, x = 130, width = 35, height = 30 },
