@@ -35,6 +35,16 @@ UI_CUSTOM_VALUE = {
 		["btn_default > text"] = { y = "-1" },
 		["btn_cancel > text"] = { y = "-1" }
 	},
+	["ui_mm_load_dlg_16"] = {
+		["btn_load > text"] = { y = "-1" },
+		["btn_delete > text"] = { y = "-1" },
+		["btn_cancel > text"] = { y = "-1" }
+	},
+	["ui_mm_save_dlg_16"] = {
+		["btn_save > text"] = { y = "-1" },
+		["btn_delete > text"] = { y = "-1" },
+		["btn_cancel > text"] = { y = "-1" }
+	},
 	["ui_mcm_16"] = {
 		["btn_accept > text"] = { y = "-1" },
 		["btn_reset > text"] = { y = "-1" },
