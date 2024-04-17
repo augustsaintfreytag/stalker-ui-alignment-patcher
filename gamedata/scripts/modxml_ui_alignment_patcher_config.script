@@ -217,11 +217,11 @@ UI_CUSTOM_VALUE = {
 		["logs_item > image"] = { y = 0 }
 	},
 	["maingame_pda_msg_16"] = {
-		["time_static"] = { y = 2, x = 47 },
-		["time_static > text"] = { vert_align = "t" },
-		["caption_static"] = { y = 1, x = 76, width = 235 },
+		["time_static"] = { y = 0, x = 47 },
+		["time_static > text"] = { vert_align = "t", font = "letterica18" },
+		["caption_static"] = { y = 0, x = 76, width = 235 },
 		["caption_static > text"] = { vert_align = "t" },
-		["msg_static"] = { y = 16, x = 47, width = 285 },
+		["msg_static"] = { y = 12, x = 47, width = 285 },
 		["msg_static > text"] = { vert_align = "t" }
 	},
 	["ui_debug_launcher_16"] = {
