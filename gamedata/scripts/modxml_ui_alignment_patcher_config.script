@@ -132,10 +132,10 @@ UI_CUSTOM_VALUE = {
 		["item_info > no_trade"] = { y = "-1000", width = 0, height = 0 },
 		["item_info > description"] = { y = 40 },
 		["item_info > description > text"] = { complex_mode = 1, vert_align = "t" },
-		["stats_box > cap"] = { height = 18, y = 0, x = 15 },
-		["stats_box > diff"] = { height = 18, y = 0, x = 180 },
-		["stats_box > prog_txt"] = { height = 18, y = 0 },
-		["stats_box > compare"] = { height = 18, y = 0 },
+		["stats_box > cap"] = { height = 19, y = 0, x = 15 },
+		["stats_box > diff"] = { height = 19, y = 0, x = 180 },
+		["stats_box > prog_txt"] = { height = 19, y = 0 },
+		["stats_box > compare"] = { height = 19, y = 0 },
 		["stats_box > icon"] = { height = 14, width = 10, y = 2, x = 2 },
 		["ammo_type > cap_ammo_types"] = { x = 12, width = 52 },
 		["ammo_type > cap_ammo_used_type"] = { x = 58 },
@@ -217,11 +217,11 @@ UI_CUSTOM_VALUE = {
 		["logs_item > image"] = { y = 0 }
 	},
 	["maingame_pda_msg_16"] = {
-		["time_static"] = { y = 2, x = 47 },
-		["time_static > text"] = { vert_align = "t" },
-		["caption_static"] = { y = 1, x = 76, width = 235 },
+		["time_static"] = { y = 0, x = 47 },
+		["time_static > text"] = { vert_align = "t", font = "letterica18" },
+		["caption_static"] = { y = 0, x = 76, width = 235 },
 		["caption_static > text"] = { vert_align = "t" },
-		["msg_static"] = { y = 16, x = 47, width = 285 },
+		["msg_static"] = { y = 12, x = 47, width = 285 },
 		["msg_static > text"] = { vert_align = "t" }
 	},
 	["ui_debug_launcher_16"] = {

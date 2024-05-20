@@ -24,7 +24,7 @@ function on_xml_read()
 		end
 
 		-- Skip proxy files in UI directories.
-		if string.find(xml_scope_name, "textures_descr") then
+		if string.find(xml_scope_name, "scroll_bar") then
 			return
 		end
 
