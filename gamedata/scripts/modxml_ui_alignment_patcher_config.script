@@ -120,10 +120,10 @@ UI_CUSTOM_VALUE = {
 		-- Use regular checkbox (instead of radio button) for reset
 		["check_reset > texture"] = "ui_inGame2_checkbox",
 		-- Portrait selection window
-		["popup_faction > cap_faction"] = { width = "200" },
+		["popup_faction > cap_faction"] = { width = 200 },
 		["popup_faction > cap_faction > text"] = { align = "l" },
 		-- Faction selection window
-		["popup_icon > cap_icon"] = { width = "200" },
+		["popup_icon > cap_icon"] = { width = 200 },
 		["popup_icon > cap_icon > text"] = { align = "l" }
 	},
 	["talk_16"] = {
