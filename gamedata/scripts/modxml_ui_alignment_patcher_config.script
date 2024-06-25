@@ -171,6 +171,10 @@ UI_CUSTOM_VALUE = {
 	["ui_items_cook_16"] = {
 		["btn_cook > text"] = { y = "-2" }
 	},
+	["ui_item_detail_16"] = {
+		["itm_details > form > text_s_l"] = { width = 355 },
+		["itm_details > form > text_b_l"] = { width = 355 }
+	},
 	["maingame_pda_msg_16"] = {
 		["time_static"] = { y = -1, x = 47 },
 		["time_static > text"] = { vert_align = "t", font = "letterica18" },
