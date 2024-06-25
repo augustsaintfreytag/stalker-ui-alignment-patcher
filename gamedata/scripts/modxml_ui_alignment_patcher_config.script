@@ -183,6 +183,10 @@ UI_CUSTOM_VALUE = {
 		["msg_static"] = { y = 12, x = 47, width = 285 },
 		["msg_static > text"] = { vert_align = "t" }
 	},
+	["ui_debug_launcher_16"] = {
+		["dbg_spawn_name_i > btn_name > text"] = { y = "-1" },
+		["dbg_spawn_name > btn_name > text"] = { y = "-1" }
+	},
 	["pda_16"] = {
 		["background_static"] = {},
 		["caption_static"] = { y = 17, x = 26 },
@@ -247,8 +251,5 @@ UI_CUSTOM_VALUE = {
 		["logs_item > text_static"] = { y = 16 },
 		["logs_item > text_static > text"] = { complex_mode = 1, vert_align = "t" },
 		["logs_item > image"] = { y = 0 }
-	["ui_debug_launcher_16"] = {
-		["dbg_spawn_name_i > btn_name > text"] = { y = "-1" },
-		["dbg_spawn_name > btn_name > text"] = { y = "-1" }
 	}
 }
