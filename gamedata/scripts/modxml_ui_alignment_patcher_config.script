@@ -189,15 +189,28 @@ UI_CUSTOM_VALUE = {
 	},
 	["pda_16"] = {
 		["background_static"] = {},
-		["caption_static"] = { y = 17, x = 26 },
+		["caption_static"] = { y = 18, x = 26 },
 		["caption_static > text"] = { complex_mode = 1, vert_align = "c" },
 		["clock_wnd"] = { y = 36 },
 		["clock_wnd > text"] = { complex_mode = 1, vert_align = "c" },
 		["battery_bar"] = { y = 29 }
 	},
+	["pda_tasks_16"] = {
+		["second_task_wnd > task_item > name"] = { y = 5 },
+		["second_task_wnd > task_item > name > text"] = { complex_mode = 1, vert_align = "c" }
+		-- ["storyline_task_item > t_caption"] = { y = 2 },
+		-- ["storyline_task_item > t_caption > text"] = { complex_mode = 1 }
+	},
 	["pda_taskboard_16"] = {
 		["btn_refresh_tasks"] = { height = 16, width = 14, y = 100 },
-		["btn_refresh_tasks > text"] = { y = 2, x = 20, complex_mode = 0 }
+		["btn_refresh_tasks > text"] = { y = 2, x = 20, complex_mode = 0 },
+		["btn_accept_task"] = {},
+		["btn_accept_task > text"] = { x = 628, y = 3, complex_mode = 0 },
+		["btn_next_task"] = {},
+		["btn_next_task > text"] = { x = 628, y = 3, complex_mode = 0 },
+		["icon_field"] = { y = 30 },
+		["task_icon_field"] = { y = 30 },
+		["task_details_field"] = { y = 79 }
 	},
 	["pda_ranking_16"] = {
 		["stat_info > stat[y=103]"] = { y = 111 },
@@ -205,10 +218,12 @@ UI_CUSTOM_VALUE = {
 		["stat_info > stat[y=179]"] = { y = 183 },
 		["stat_info > stat[y=214]"] = { y = 217 },
 		["stat_info > stat[y=264]"] = { y = 265 },
-		["coc_ranking_itm > name"] = { x = 76 },
-		["coc_ranking_itm > descr"] = { x = 76 },
-		["coc_ranking_itm_actor > name"] = { x = 76 },
-		["coc_ranking_itm_actor > descr"] = { x = 76 }
+		["coc_ranking_itm > name"] = { x = 96, y = 0 },
+		["coc_ranking_itm > descr"] = { x = 96, y = 23 },
+		["coc_ranking_itm > icon"] = { x = 5, y = 5, width = 83, height = 47 },
+		["coc_ranking_itm_actor > name"] = { x = 96, y = 0 },
+		["coc_ranking_itm_actor > descr"] = { x = 96, y = 23 },
+		["coc_ranking_itm_actor > icon"] = { x = 5, y = 5, width = 83, height = 47 }
 	},
 	["pda_relations_16"] = {
 		["btn_to_text"] = { width = 16, height = 20, y = 102 },
