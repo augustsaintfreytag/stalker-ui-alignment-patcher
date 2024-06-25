@@ -33,7 +33,11 @@ UI_CUSTOM_VALUE = {
 		["btn_accept > text"] = { y = "-1" },
 		["btn_reset > text"] = { y = "-1" },
 		["btn_default > text"] = { y = "-1" },
-		["btn_cancel > text"] = { y = "-1" }
+		["btn_cancel > text"] = { y = "-1" },
+		["elements > title_l > text"] = { align = "l" },
+		["elements > title_c > text"] = { align = "c" },
+		["elements > title_r > text"] = { align = "r" },
+		["elements > track_value > text"] = { align = "r" }
 	},
 	["ui_mm_load_dlg_16"] = {
 		["btn_load > text"] = { y = "-1" },
