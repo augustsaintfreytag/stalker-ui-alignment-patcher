@@ -183,6 +183,9 @@ UI_CUSTOM_VALUE = {
 		["msg_static"] = { y = 12, x = 47, width = 285 },
 		["msg_static > text"] = { vert_align = "t" }
 	},
+	["messages_window"] = {
+		["sp_log_list"] = { y = 355, width = 500 },
+	},
 	["ui_debug_launcher_16"] = {
 		["dbg_spawn_name_i > btn_name > text"] = { y = "-1" },
 		["dbg_spawn_name > btn_name > text"] = { y = "-1" }
