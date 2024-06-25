@@ -126,6 +126,22 @@ UI_CUSTOM_VALUE = {
 		["popup_icon > cap_icon"] = { width = "200" },
 		["popup_icon > cap_icon > text"] = { align = "l" }
 	},
+	["talk_16"] = {
+		["question_item > num_text > text"] = { complex_mode = 1, vert_align = "t" },
+		["question_item > content_text > text"] = { complex_mode = 1, vert_align = "t", y = 1 },
+		["other_answer_item > name_caption > text"] = { complex_mode = 0 },
+		["other_answer_item > content_text > text"] = { complex_mode = 0 },
+		["iconed_answer_item"] = { width = 449 },
+		["iconed_answer_item > msg_icon"] = { width = 48 },
+		["iconed_answer_item > content_text"] = { x = 70, y = 2 },
+		["iconed_answer_item > content_text > text"] = { complex_mode = 0 },
+		["actor_answer_item > name_caption > text"] = { complex_mode = 0 },
+		["actor_answer_item > content_text > text"] = { complex_mode = 0 },
+		["simple_answer_item > content_text"] = { y = 2 },
+		["simple_answer_item > content_text > text"] = { complex_mode = 0 },
+		["iconed_trade_info > content_text > text"] = { complex_mode = 0 },
+
+	},
 	["soulslike_ui_mm_gamemode_16"] = {
 		["options > check_soulslike_mode"] = { y = 135, x = 130, width = 35, height = 30 },
 		["options > cap_check_soulslike_mode"] = { y = 140, x = 160, width = 60 },
