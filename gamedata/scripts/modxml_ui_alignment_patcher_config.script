@@ -205,8 +205,6 @@ UI_CUSTOM_VALUE = {
 	["pda_tasks_16"] = {
 		["second_task_wnd > task_item > name"] = { y = 5 },
 		["second_task_wnd > task_item > name > text"] = { complex_mode = 1, vert_align = "c" }
-		-- ["storyline_task_item > t_caption"] = { y = 2 },
-		-- ["storyline_task_item > t_caption > text"] = { complex_mode = 1 }
 	},
 	["pda_taskboard_16"] = {
 		["btn_refresh_tasks"] = { height = 16, width = 14, y = 100 },
@@ -254,7 +252,6 @@ UI_CUSTOM_VALUE = {
 		["message_checkbox"] = { y = 95 },
 		["message_checkbox > text"] = { y = 7, complex_mode = 0 }
 	},
-	["pda_radio_16"] = {},
 	["pda_logs_16"] = {
 		["filter_news"] = { y = 95 },
 		["filter_news > text"] = { y = 7, complex_mode = 0 },
