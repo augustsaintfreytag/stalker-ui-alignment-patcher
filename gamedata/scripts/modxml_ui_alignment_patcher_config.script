@@ -49,6 +49,11 @@ UI_CUSTOM_VALUE = {
 		["key_binding > scroll_view > item_group > text"] = { font = "graffiti22", complex_mode = 1, vert_align = "c" },
 		["key_binding > scroll_view > item_key > text"] = { font = "letterica18" }
 	},
+	["ui_mutant_loot_16"] = {
+		["btn_loot > text"] = { y = 0 },
+		["btn_loot_all > text"] = { y = 0 },
+		["btn_cancel > text"] = { y = 0 },
+		["image"] = { x = 8, y = 10, width = 228, height = 142 }
 	},
 	["ui_mm_load_dlg_16"] = {
 		["btn_load > text"] = { y = "-1" },
