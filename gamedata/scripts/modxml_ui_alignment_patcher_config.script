@@ -220,19 +220,24 @@ UI_CUSTOM_VALUE = {
 		["battery_bar"] = { y = 29 }
 	},
 	["pda_tasks_16"] = {
+		["map_wnd > map_hint_item"] = { height = 36, width = 160 },
+		["map_wnd > main_wnd > auto_frameline"] = { y = 2 },
 		["second_task_wnd > task_item > name"] = { y = 5 },
-		["second_task_wnd > task_item > name > text"] = { complex_mode = 1, vert_align = "c" }
+		["second_task_wnd > task_item > name > text"] = { complex_mode = 1, vert_align = "c" },
 	},
 	["pda_taskboard_16"] = {
 		["btn_refresh_tasks"] = { height = 16, width = 14, y = 100 },
 		["btn_refresh_tasks > text"] = { y = 2, x = 20, complex_mode = 0 },
-		["btn_accept_task"] = {},
-		["btn_accept_task > text"] = { x = 628, y = 3, complex_mode = 0 },
-		["btn_next_task"] = {},
-		["btn_next_task > text"] = { x = 628, y = 3, complex_mode = 0 },
-		["icon_field"] = { y = 30 },
-		["task_icon_field"] = { y = 30 },
-		["task_details_field"] = { y = 79 }
+		["task_category"] = { x = 30, width = 741 },
+		["icon_field"] = { y = 30, width = 52, height = 32 },
+		["stalker_info"] = { y = 69 },
+		["task_icon_field"] = { y = 30, width = 52, height = 32 },
+		["task_details_field"] = { y = 69, width = 123 },
+		["task_full_description_field"] = { x = 285, width = 260 },
+		["btn_accept_task"] = { x = 629 },
+		["btn_accept_task > text"] = { x = 630, y = 3, complex_mode = 0 },
+		["btn_next_task"] = { x = 629 },
+		["btn_next_task > text"] = { x = 630, y = 3, complex_mode = 0 }
 	},
 	["pda_ranking_16"] = {
 		["stat_info > stat[y=103]"] = { y = 111 },
