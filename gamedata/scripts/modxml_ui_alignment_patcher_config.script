@@ -37,7 +37,18 @@ UI_CUSTOM_VALUE = {
 		["elements > title_l > text"] = { align = "l" },
 		["elements > title_c > text"] = { align = "c" },
 		["elements > title_r > text"] = { align = "r" },
-		["elements > track_value > text"] = { align = "r" }
+		["elements > track_value > text"] = { align = "r" },
+		["cap_keyboardsetup > texture"] = { a = 20 },
+		["key_binding > header_1 > texture"] = { a = 20 },
+		["key_binding > header_2 > texture"] = { a = 20 },
+		["cap_keyboardsetup > auto_static"] = { x = 0 },
+		["cap_keyboardsetup > auto_static > text"] = { x = 4, y = 1 },
+		["key_binding > header_1 > auto_static > text"] = { font = "graffiti19" },
+		["key_binding > header_2 > auto_static > text"] = { font = "graffiti19" },
+		["key_binding > header_3 > auto_static > text"] = { font = "graffiti19" },
+		["key_binding > scroll_view > item_group > text"] = { font = "graffiti22", complex_mode = 1, vert_align = "c" },
+		["key_binding > scroll_view > item_key > text"] = { font = "letterica18" }
+	},
 	},
 	["ui_mm_load_dlg_16"] = {
 		["btn_load > text"] = { y = "-1" },
